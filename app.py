@@ -176,40 +176,12 @@ def render_hero():
         <div class="hero-card">
             <div class="hero-kicker">Clinical decision support dashboard</div>
             <h1 class="hero-title">Multiple Disease Prediction System</h1>
-            <p class="hero-copy">
-                A cleaner, more interactive interface for diabetes, heart disease, and Parkinson's predictions.
-                Use the sidebar to switch models, enter values with guided controls, and get an immediate result.
-            </p>
-            <div class="pill-row">
-                <span class="pill">Interactive forms</span>
-                <span class="pill">Responsive layout</span>
-                <span class="pill">Model-backed predictions</span>
-            </div>
+            
+            
         </div>
         """,
         unsafe_allow_html=True,
     )
-
-
-def render_metrics():
-    col1, col2, col3 = st.columns(3)
-    cards = [
-        (col1, "Diabetes", "8 inputs", "Uses the cleaned diabetes model"),
-        (col2, "Heart", "13 inputs", "Encoded values with guided controls"),
-        (col3, "Parkinson's", "22 inputs", "Structured in a compact form"),
-    ]
-    for col, label, value, subtitle in cards:
-        with col:
-            st.markdown(
-                f"""
-                <div class="hero-card metric-card">
-                    <div class="metric-label">{label}</div>
-                    <p class="metric-value">{value}</p>
-                    <div class="metric-sub">{subtitle}</div>
-                </div>
-                """,
-                unsafe_allow_html=True,
-            )
 
 
 def render_result(is_positive, positive_text, negative_text):
@@ -255,16 +227,13 @@ def float_input(label, value, min_value=None, max_value=None, step=0.1, help_tex
 
 
 render_hero()
-render_metrics()
 
 with st.sidebar:
     st.markdown(
         """
         <div class="sidebar-card">
             <div class="sidebar-title">Prediction Navigator</div>
-            <div class="sidebar-note">
-                Choose a disease model below. Inputs are organized as forms so you can review and submit in one step.
-            </div>
+            
         </div>
         """,
         unsafe_allow_html=True,
